@@ -197,9 +197,8 @@
                         </div><!-- End Revenue Card -->
 
 
-
                         <!-- Reports -->
-                        {{-- <div class="col-12">
+                        <div class="col-12">
                             <div class="card">
 
 
@@ -214,10 +213,18 @@
                                             new Chart(document.querySelector('#barChart'), {
                                                 type: 'bar',
                                                 data: {
-                                                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                                    labels: ["Juli", "Agustus", "September", "Oktober", "November", "Desember", "Januari",
+                                                        "Februari", "Maret", "April", "Mei", "Juni",
+                                                    ],
                                                     datasets: [{
-                                                        label: 'Bar Chart',
-                                                        data: [65, 59, 80, 81, 56, 55, 40],
+                                                        label: 'Jumlah Pengajuan Peminjaman',
+                                                        data: [{!! json_encode($total_juli) !!}, {!! json_encode($total_agus) !!},
+                                                            {!! json_encode($total_sept) !!}, {!! json_encode($total_okto) !!},
+                                                            {!! json_encode($total_nove) !!}, {!! json_encode($total_dese) !!},
+                                                            {!! json_encode($total_jan) !!}, {!! json_encode($total_feb) !!},
+                                                            {!! json_encode($total_mar) !!}, {!! json_encode($total_apr) !!},
+                                                            {!! json_encode($total_mei) !!}, {!! json_encode($total_jun) !!}
+                                                        ],
                                                         backgroundColor: [
                                                             'rgba(255, 99, 132, 0.2)',
                                                             'rgba(255, 159, 64, 0.2)',
@@ -254,7 +261,7 @@
                                 </div>
 
                             </div>
-                        </div><!-- End Reports --> --}}
+                        </div><!-- End Reports -->
 
 
                     </div>

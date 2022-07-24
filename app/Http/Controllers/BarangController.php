@@ -456,7 +456,10 @@ class BarangController extends Controller
         } elseif ($request->hasFile('foto')) {
             $request->file('foto')->move('fotobarang/', $request->file('foto')->getClientOriginalName());
             $inputbarang->foto = $request->file('foto')->getClientOriginalName();
-            $inputbarang->update(['foto' => $request->file('foto')]);
+           // $inputbarang->update(['foto' => $request->file('foto')]);
+            $inputbarang->update([
+                'foto' =>  $request->file('foto')->getClientOriginalName(),
+            ]);
         }
 
 
