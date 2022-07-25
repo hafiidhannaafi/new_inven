@@ -81,7 +81,7 @@
                       <div class="invalid-feedback">Please, enter your name!</div>
                     </div>
 
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                       <label for="yourName" class="form-label">Foto</label>
                       <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
                                 @error('foto')
@@ -89,10 +89,10 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            {{-- </div>
-                        </div> --}}
+                            </div>
+                        </div>
                       <div class="invalid-feedback">Please, enter your name!</div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label"> Email</label>

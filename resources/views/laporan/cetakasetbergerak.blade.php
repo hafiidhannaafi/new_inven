@@ -75,7 +75,7 @@
                         $nomor = 1;
                         ?>
                         @foreach ($data as $data)
-                            @if ($data->jenis_asets_id == )
+                            @if ($data->jenis_asets_id == 1)
                                 <tr>
                                     <th> {{ $nomor++ }}</th>
                                     <td> {{ $data->kode }}</td>
