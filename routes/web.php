@@ -293,6 +293,7 @@ Route::get('/peminjaman/peminjaman', [PeminjamanController::class, 'peminjamanad
 Route::get('/peminjaman/riwayat', [PeminjamanController::class, 'riwayatadmin']);
 Route::get('/detailbarangadmin/{id}', [PeminjamanController::class, 'detail_barang_admin']);
 Route::get('/detailriwayatadmin/{id}', [PeminjamanController::class, 'detail_riwayat_admin']);
+Route::get('/peminjaman/pengembalian', [PeminjamanController::class, 'pengembalianadmin']);
 
 
 //RIWAYAT PEMINJAM kepala unit

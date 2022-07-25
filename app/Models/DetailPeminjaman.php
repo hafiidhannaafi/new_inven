@@ -15,6 +15,7 @@ class DetailPeminjaman extends Model
         'status_peminjamans_id',
         'barangs_id',
         'jumlah_pinjam',
+        'status'
     ];
 
     public function peminjamans()

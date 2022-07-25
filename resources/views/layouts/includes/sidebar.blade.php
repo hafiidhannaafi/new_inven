@@ -184,6 +184,12 @@
                      </li>
 
                      <li>
+                         <a class="@yield('riwayat')" href="{{ url('/peminjaman/pengembalian') }}">
+                             <i class="bi bi-circle"></i><span>Data Pengembalian</span>
+                         </a>
+                     </li>
+
+                     <li>
                          <a class="@yield('riwayat')" href="{{ url('/peminjaman/riwayat') }}">
                              <i class="bi bi-circle"></i><span>Riwayat Peminjaman</span>
                          </a>

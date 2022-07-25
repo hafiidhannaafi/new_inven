@@ -171,6 +171,29 @@ class PeminjamanController extends Controller
        
     }
 
+    public function pengembalianadmin()
+    {
+        $dataasalperolehan = DataAsalPerolehan::all();
+        $datajenisaset = DataJenisAset::all();
+        $jenisbarang = JenisBarang::all();
+        $datasatuan = Satuan::all();
+        $inputbarang = Barang::all();
+        $akun = User::all();
+           
+        $peminjaman = Peminjaman::latest()->get();
+        return view('peminjaman.pengembalian',[
+            "title" => "pengajuan",
+            "jenisbarang" => $jenisbarang,
+            "jenisaset" => $datajenisaset,
+            "dataasalperolehan" => $dataasalperolehan,
+            "datasatuan" =>$datasatuan,
+            "inputbarang"=> $inputbarang,
+            "peminjaman"=> $peminjaman,
+            "akun"=> $akun
+        ]);
+       
+    }
+
     public function detail_barang_admin($id)
     {
         $data = DetailPeminjaman::where('kode_peminjaman', $id)->get(); //kode_peminjaman = $id didapatkan
@@ -194,6 +217,41 @@ class PeminjamanController extends Controller
         ]);
        
     }
+
+    public function editpeminjaman($id)
+    {
+        $dataasalperolehan = DataAsalPerolehan::all();
+        $datajenisaset = DataJenisAset::all();
+        $jenisbarang = JenisBarang::all();
+        $datasatuan = Satuan::all();
+        $inputbarang = Barang::all();
+        $akun = User::all();
+       $peminjaman = \App\Models\Peminjaman::find($id);
+        return view('peminjaman.edit', [
+           "title" => "pengajuan",
+            "jenisbarang" => $jenisbarang,
+            "jenisaset" => $datajenisaset,
+            "dataasalperolehan" => $dataasalperolehan,
+            "datasatuan" =>$datasatuan,
+            "inputbarang"=> $inputbarang,
+            "peminjaman"=> $peminjaman,
+            "akun"=> $akun
+
+        ]);
+    }
+
+    public function updatepeminjaman(Request $request, $id)
+    {
+       $peminjaman = Peminjaman::find($id);
+        $peminjaman->update([
+        'tgl_ambil' => $request->input('tgl_ambil'),
+        'tgl_konfirmasikembali' => $request->input('tgl_konfirmasikembali'),
+                ]);
+
+        return redirect ('/peminjaman/pengembalian')->with('success', 'Tanggal Konfirmasi Berhasil ditambahkan!');
+    }
+
+
 
     //MENAMPILKAN  PEMINJAMAN// KEPALA UNIT
     public function pengajuan()
